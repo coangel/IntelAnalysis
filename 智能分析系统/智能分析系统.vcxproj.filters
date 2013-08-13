@@ -87,9 +87,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="智能分析系统.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -111,11 +108,11 @@
     <ClInclude Include="CalendarBar.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="IntAnalApp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="智能分析系统.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -129,6 +126,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CalendarBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IntAnalApp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

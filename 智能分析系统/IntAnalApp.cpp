@@ -15,7 +15,7 @@
 #include "stdafx.h"
 #include "afxwinappex.h"
 #include "afxdialogex.h"
-#include "智能分析系统.h"
+#include "IntAnalApp.h"
 #include "MainFrm.h"
 
 #include "IntAnalDoc.h"

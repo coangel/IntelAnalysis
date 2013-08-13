@@ -16,7 +16,7 @@
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
 #ifndef SHARED_HANDLERS
-#include "智能分析系统.h"
+#include "IntAnalApp.h"
 #endif
 
 #include "IntAnalDoc.h"
@@ -143,7 +143,61 @@ CIntAnalDoc* CIntAnalView::GetDocument() const // 非调试版本是内联的
 
 void CIntAnalView::OnBtnOpen()
 {
-	// TODO: 在此添加命令处理程序代码
+	CString strPathName;
+	//创建一个打开文件对话框，并返回完整的文件路径
+	const TCHAR BASED_CODE szFilter[] = _T("256色位图文件(*.bmp)|");
+	CFileDialog dlg(TRUE,NULL,NULL,OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,szFilter,NULL);
+    if(dlg.DoModal() == IDOK)
+	{
+	   strPathName = dlg.GetPathName();
+	}
+	else 
+	{
+		return;
+	}
+
+	//创建一个文件对象
+   	CFile file;
+
+	//以只读模式打开文件
+	file.Open (strPathName,CFile::modeRead);
+
+	/*
+	//读取文件到HDIB句柄中. 注意:此时只是读取位图文件中文件头之后的部分,不含文件头
+	m_hDIB = ::ReadDIBFile (file);
+
+	//HDIB句柄: 就是一块存储位图数据的内存区域的地址
+	//HDIB句柄包含:位图信息头、调色板(如果有的话)、DIB图像数据
+	//关闭文件
+	file.Close ();
+	//指向DIB的指针(指向位图信息头)
+	BYTE* lpDIB=(BYTE*)::GlobalLock ((HGLOBAL)m_hDIB);
+	// 获取DIB中颜色表中的颜色数目
+	WORD wNumColors;	
+	wNumColors = ::DIBNumColors((char*)lpDIB);
+
+	// 判断是否是256色位图
+	if (wNumColors != 256)
+	{
+		// 提示用户
+		MessageBox("非256色位图！", "系统提示" , MB_ICONINFORMATION | MB_OK);
+
+		// 解除锁定
+		::GlobalUnlock((HGLOBAL)m_hDIB);
+
+		// 返回
+		return;
+	}
+
+	//在屏幕上显示位图
+	CDC* pDC=GetDC();
+	DisplayDIB(pDC,m_hDIB);
+
+	//更改位图文件是否已加载的标志
+	fileloaded=true;
+
+	gyhfinished=false;
+	*/
 }
 
 

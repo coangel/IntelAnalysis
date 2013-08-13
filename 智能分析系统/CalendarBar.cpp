@@ -11,7 +11,7 @@
 
 #include "stdafx.h"
 #include "CalendarBar.h"
-#include "智能分析系统.h"
+#include "IntAnalApp.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

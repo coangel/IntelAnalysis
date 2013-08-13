@@ -13,7 +13,7 @@
 //
 
 #include "stdafx.h"
-#include "智能分析系统.h"
+#include "IntAnalApp.h"
 
 #include "MainFrm.h"
 
